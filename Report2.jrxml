@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.1.0.final using JasperReports Library version 6.1.0  -->
+<!-- 2019-12-20T15:37:03 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Report2" pageWidth="840" pageHeight="842" whenNoDataType="NoDataSection" columnWidth="800" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="c67be0af-0308-4604-b14f-50b232dcab2c">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="SQL Data Adapter "/>
+	<parameter name="hire_date" class="java.util.Date"/>
+	<parameter name="salary" class="java.math.BigDecimal"/>
+	<queryString>
+		<![CDATA[select employee_id , first_name , last_name , email , department_name , hire_date , salary 
+   from HR.employees a , HR.departments b where a.department_id=b.department_id
+   and  hire_date=$P{hire_date} and salary=$P{salary}]]>
+	</queryString>
+	<field name="EMPLOYEE_ID" class="java.math.BigDecimal"/>
+	<field name="FIRST_NAME" class="java.lang.String"/>
+	<field name="LAST_NAME" class="java.lang.String"/>
+	<field name="EMAIL" class="java.lang.String"/>
+	<field name="DEPARTMENT_NAME" class="java.lang.String"/>
+	<field name="HIRE_DATE" class="java.sql.Timestamp"/>
+	<field name="SALARY" class="java.math.BigDecimal"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="30" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="800" height="30" uuid="8cf604c4-9a51-4774-9746-a3bd8c36b5ec"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Report2]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="30" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="800" height="30" uuid="65f88209-58db-4be7-ac04-1463190a8b55"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Hire Date : " + new SimpleDateFormat("dd/MM/yyyy").format($P{hire_date}) + " & " + "Salary: " + $P{salary}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="20" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="116" height="20" uuid="18432022-3c26-4edb-bc41-af408319b12a"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[EMPLOYEE_ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="116" y="0" width="114" height="20" uuid="929c9526-5518-4910-ae02-3e419b4df56a"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[FIRST_NAME]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="230" y="0" width="114" height="20" uuid="856b5847-5f11-4dbe-8986-490c47dbcc9b"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[LAST_NAME]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="344" y="0" width="114" height="20" uuid="c2957ffe-06b4-4ed2-9e8e-45ce17d45d68"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[EMAIL]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="458" y="0" width="132" height="20" uuid="b8886c0d-79bf-42e0-b4fe-8115aac0c5f1"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DEPARTMENT NAME]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="590" y="0" width="114" height="20" uuid="46d19117-cab6-4d32-8e5c-b296bc8193f2"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[HIRE_DATE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="704" y="0" width="96" height="20" uuid="c1f259d8-4546-4ebc-92d6-3c8f05b42da9"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SALARY]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+			<textField>
+				<reportElement x="0" y="0" width="116" height="20" uuid="a7fb6bd9-1835-46f8-8060-83217348f001"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{EMPLOYEE_ID}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="116" y="0" width="114" height="20" uuid="04fe96bf-6af8-4813-a030-9e009fe160a0"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{FIRST_NAME}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="230" y="0" width="114" height="20" uuid="e675362b-05c4-4463-bca4-a88611cfa68c"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{LAST_NAME}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="344" y="0" width="114" height="20" uuid="db1f2f13-5c68-47f1-9b16-9fefb107cbef"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{EMAIL}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="458" y="0" width="132" height="20" uuid="b8a299e5-dce4-4e7e-963c-48f3f5066e8a"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{DEPARTMENT_NAME}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="590" y="0" width="114" height="20" uuid="c52a30df-3db8-4e43-8545-da5d37cb500b"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{HIRE_DATE}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="704" y="0" width="96" height="20" uuid="da858223-df3f-4df1-9a34-3173ac99e0cd"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{SALARY}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<noData>
+		<band height="102">
+			<textField>
+				<reportElement x="0" y="31" width="800" height="30" uuid="5d39095c-84e9-4106-ad4f-5c74e4561f89"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Hire Date : " + new SimpleDateFormat("dd/MM/yyyy").format($P{hire_date}) + " & " + "Salary: " + $P{salary}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="62" width="116" height="20" uuid="7681b9f2-f16f-46b3-95a1-f09cf0b5f156"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[EMPLOYEE_ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="116" y="62" width="114" height="20" uuid="f1022440-6dc1-4c44-8fc0-46c0cb07df3a"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[FIRST_NAME]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="230" y="62" width="114" height="20" uuid="7b1d21c4-7389-4096-86f5-afc2844fa103"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[LAST_NAME]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="344" y="62" width="114" height="20" uuid="c0a445ae-e288-4e5c-a880-d8e4e17629fb"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[EMAIL]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="458" y="62" width="132" height="20" uuid="bbc4297b-3f45-49a4-b9a9-c637e8241957"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DEPARTMENT NAME]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="590" y="62" width="114" height="20" uuid="57c0b7f8-8df3-4d02-8a25-b7ab4ea75c69"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[HIRE_DATE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="704" y="62" width="96" height="20" uuid="70da45fc-c289-4e51-a1da-10522add9c83"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SALARY]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="0" y="82" width="800" height="20" forecolor="#FA1007" uuid="dc90683a-2ab4-4d26-9400-c1badfa656ac"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#8F1210"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#8F1210"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#8F1210"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#8F1210"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["No Data Found"]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="0" width="800" height="30" uuid="29d46fc5-8065-43c1-85b7-ea6f41ff8eba"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Report2]]></text>
+			</staticText>
+		</band>
+	</noData>
+</jasperReport>

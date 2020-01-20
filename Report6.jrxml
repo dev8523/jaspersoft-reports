@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.1.0.final using JasperReports Library version 6.1.0  -->
+<!-- 2019-12-20T16:06:39 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Report6" pageWidth="3040" pageHeight="842" columnWidth="3000" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="8f60582b-f521-4e3f-b7fb-f0507d34443e">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="SQL Data Adapter "/>
+	<queryString>
+		<![CDATA[select employee_id , first_name , last_name , email , department_name , hire_date , salary , c.STREET_ADDRESS , city , c.STATE_PROVINCE,
+      d.country_name 
+   from HR.employees a, HR.departments b, HR.LOCATIONS c, HR.countries d 
+   where a.department_id=b.department_id and b.LOCATION_ID=c.LOCATION_ID 
+   and c.country_id=d.country_id]]>
+	</queryString>
+	<field name="EMPLOYEE_ID" class="java.math.BigDecimal"/>
+	<field name="FIRST_NAME" class="java.lang.String"/>
+	<field name="LAST_NAME" class="java.lang.String"/>
+	<field name="EMAIL" class="java.lang.String"/>
+	<field name="DEPARTMENT_NAME" class="java.lang.String"/>
+	<field name="HIRE_DATE" class="java.sql.Timestamp"/>
+	<field name="SALARY" class="java.math.BigDecimal"/>
+	<field name="STREET_ADDRESS" class="java.lang.String"/>
+	<field name="CITY" class="java.lang.String"/>
+	<field name="STATE_PROVINCE" class="java.lang.String"/>
+	<field name="COUNTRY_NAME" class="java.lang.String"/>
+	<group name="COUNTRY_NAME">
+		<groupExpression><![CDATA[$F{COUNTRY_NAME}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="30" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="800" height="30" uuid="ed8acdd5-549a-4b52-afc6-f5b510da2cca"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Report6"]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="30" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="2000" height="30" uuid="0ceecbb2-0b15-4a48-84f5-a6d15ce68c47"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif" size="13" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Group By City"]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="20" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="280" height="20" uuid="9150baa3-e2fd-4aaa-9c06-9005eaef9dca"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[EMPLOYEE_ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="280" y="0" width="272" height="20" uuid="16b33e23-e917-454c-ab07-bdd2fae37e28"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[FIRST_NAME]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="552" y="0" width="272" height="20" uuid="5ebb0dc1-585a-4e6d-8543-32b51222d716"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[LAST_NAME]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="824" y="0" width="272" height="20" uuid="2c9f9f26-2e1a-49cd-94c2-a5bb11f1b9d2"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[EMAIL]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1096" y="0" width="272" height="20" uuid="b1d85e19-f22d-438c-9e1b-44831d23abf5"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DEPARTMENT_NAME]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1368" y="0" width="272" height="20" uuid="9d2eb123-aabf-4acd-a77c-993c61fdc79b"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[HIRE_DATE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1640" y="0" width="272" height="20" uuid="ec879ef5-47e1-4b4f-9590-7ec657359b6e"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SALARY]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1912" y="0" width="272" height="20" uuid="b6ceaf33-d9a7-4254-8441-fb519a3490cd"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[STREET_ADDRESS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="2184" y="0" width="272" height="20" uuid="66c155fb-a375-42df-b117-3f481e8533df"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CITY]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="2456" y="0" width="272" height="20" uuid="4c5ab8db-ef87-4f65-a5bd-f40d4ff2f458"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[STATE_PROVINCE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="2728" y="0" width="272" height="20" uuid="a8fc0e05-d19e-4b78-9340-4b05b93452ea"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[COUNTRY_NAME]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="1" width="280" height="19" uuid="eba110b6-4373-4e6c-86ca-6baeacecde00"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{EMPLOYEE_ID}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="280" y="1" width="272" height="19" uuid="8e0487e2-7d4b-44f9-8772-b64c14bef281"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{FIRST_NAME}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="552" y="1" width="272" height="19" uuid="0a991d0c-d6a9-495d-ad4f-2ca81873570a"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{LAST_NAME}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="824" y="1" width="272" height="19" uuid="aca77e37-d6dc-4052-a08b-a77cc8109bd9"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{EMAIL}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="1096" y="1" width="272" height="19" uuid="f47d1f92-a4ad-44b7-abad-b7b632f5f3d2"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{DEPARTMENT_NAME}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="1368" y="1" width="272" height="19" uuid="4baced87-15ea-476d-894b-bffe65e8897e"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{HIRE_DATE}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="1640" y="1" width="272" height="19" uuid="e039aebf-6be4-420d-9718-f21b10267cb6"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{SALARY}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="1912" y="1" width="272" height="19" uuid="6586bd07-fa81-42c8-94a2-5c6613f4397f"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{STREET_ADDRESS}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="2184" y="1" width="272" height="19" uuid="1464388a-9c5e-44fb-82f1-401b502051ec"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{CITY}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="2456" y="1" width="272" height="19" uuid="8c6b6736-4507-402b-ac07-d5579a352148"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{STATE_PROVINCE}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="2728" y="1" width="272" height="19" uuid="cdffe65d-a32f-4158-95e1-f12da3362a8b"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{COUNTRY_NAME}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<noData>
+		<band height="102">
+			<textField>
+				<reportElement x="0" y="2" width="800" height="30" uuid="121d2009-840d-43bc-bf73-ffc149abd0bd"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Report6"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="33" width="2000" height="30" uuid="eb20fff8-54d9-41c5-8e26-5d0a62212851"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif" size="13" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Group By City"]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="65" width="280" height="20" uuid="26ef8ed2-0189-4512-bcef-559aadcf6cbf"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[EMPLOYEE_ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="280" y="65" width="272" height="20" uuid="86b6f1b3-59cc-4856-b32d-eee7ed5916b4"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[FIRST_NAME]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="552" y="65" width="272" height="20" uuid="6db7c17b-812e-4531-aa72-667a982d01f3"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[LAST_NAME]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="824" y="65" width="272" height="20" uuid="2cc2db77-1576-4399-b3d4-045a0c42e25c"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[EMAIL]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1096" y="65" width="272" height="20" uuid="812924fa-ac03-4584-b248-f301a77ff6c4"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DEPARTMENT_NAME]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1368" y="65" width="272" height="20" uuid="aac1226a-b96f-40b8-8bd4-8f71b22ff7e6"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[HIRE_DATE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1640" y="65" width="272" height="20" uuid="1fbb5ac0-fa6c-4493-8ecf-cf06f0914256"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SALARY]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1912" y="65" width="272" height="20" uuid="8080b867-4cf6-49a5-bd87-b88c07f7082e"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[STREET_ADDRESS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="2184" y="65" width="272" height="20" uuid="6c2b2fa3-b5a3-45e5-939a-2aa62447c19b"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CITY]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="2456" y="65" width="272" height="20" uuid="6b37b06d-71f8-41e4-9eb6-4cd5aca1c71a"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[STATE_PROVINCE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="2728" y="65" width="272" height="20" uuid="bb533470-5b27-4d7a-a16f-d5f1a7908933"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[COUNTRY_NAME]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="0" y="84" width="2000" height="18" forecolor="#FF0C08" uuid="83bb3827-23aa-4eae-9d49-1389e5556178"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["No Data Found"]]></textFieldExpression>
+			</textField>
+		</band>
+	</noData>
+</jasperReport>
