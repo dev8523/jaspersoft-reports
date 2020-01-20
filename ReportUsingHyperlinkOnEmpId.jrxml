@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version 6.1.0.final using JasperReports Library version 6.1.0  -->
-<!-- 2020-01-20T13:01:46 -->
+<!-- 2020-01-20T15:44:31 -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ReportUsingHyperlinkOnEmpId" pageWidth="568" pageHeight="842" columnWidth="528" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="f07331b8-82b9-4d67-a511-bfabb03d57c2">
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="SQL Data Adapter "/>
 	<property name="com.jaspersoft.studio.unit." value="pixel"/>
@@ -112,7 +112,7 @@ AND     l.country_id = c.country_id]]>
 	</columnHeader>
 	<detail>
 		<band height="21" splitType="Stretch">
-			<textField hyperlinkType="ReportExecution">
+			<textField hyperlinkType="ReportExecution" hyperlinkTarget="Parent">
 				<reportElement x="0" y="1" width="80" height="20" uuid="edda52e5-504e-4ea2-b30e-f5846f5e60a2"/>
 				<box>
 					<topPen lineWidth="0.5"/>
