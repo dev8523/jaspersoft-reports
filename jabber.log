@@ -1,8 +1,0 @@
-2020-01-09 14:39:10,049 DEBUG [0x00014838] [src\Cef.cpp(44)                         ] [cefWrapper.cef] [CefWrapper::Cef::initialChildProcess] - initialChildProcess::Enter
-2020-01-09 14:39:10,089 DEBUG [0x00014838] [src\Cef.cpp(64)                         ] [cefWrapper.cef] [CefWrapper::Cef::initialChildProcess] - initialChildProcess::Exit
-2020-01-09 14:39:14,023 DEBUG [0x0000b5e0] [src\Cef.cpp(44)                         ] [cefWrapper.cef] [CefWrapper::Cef::initialChildProcess] - initialChildProcess::Enter
-2020-01-09 18:56:56,685 DEBUG [0x0000b5e0] [src\Cef.cpp(64)                         ] [cefWrapper.cef] [CefWrapper::Cef::initialChildProcess] - initialChildProcess::Exit
-2020-01-10 15:40:44,101 DEBUG [0x0001564c] [src\Cef.cpp(44)                         ] [cefWrapper.cef] [CefWrapper::Cef::initialChildProcess] - initialChildProcess::Enter
-2020-01-10 15:43:40,261 DEBUG [0x0001564c] [src\Cef.cpp(64)                         ] [cefWrapper.cef] [CefWrapper::Cef::initialChildProcess] - initialChildProcess::Exit
-2020-01-10 15:43:44,660 DEBUG [0x00015084] [src\Cef.cpp(44)                         ] [cefWrapper.cef] [CefWrapper::Cef::initialChildProcess] - initialChildProcess::Enter
-2020-01-10 17:17:09,571 DEBUG [0x00015084] [src\Cef.cpp(64)                         ] [cefWrapper.cef] [CefWrapper::Cef::initialChildProcess] - initialChildProcess::Exit
